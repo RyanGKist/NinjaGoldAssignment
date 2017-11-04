@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold Game</title>
+	<style>
+	div {border:black;}
+	form {display:inline-block;margin-left:30px;border:3px solid black;}
+	h6 {border:3px solid black;}
+	</style>
+</head>
+<body>
+	<h1> Ninja Guy has {{session['money']}} gold</h1>
+	<div>
+		<form action="/process_money" method='post'>
+			<input type="hidden" name="building" value="farm">
+			<h2>Farm</h2>
+			<p>(earns 10-20 gold)<p>
+			<button type="submit">Find Gold!</button>
+		</form>
+
+		<form action="/process_money" method='post'>
+			<input type="hidden" name="building" value="cave">
+			<h2>Cave</h2>
+			<p>(earns 5-10 gold)</p>
+			<button type="submit">Find Gold!</button>
+		</form>
+
+		<form action="/process_money" method='post'>
+			<input type="hidden" name="building" value="house">
+			<h2>House</h2>
+			<p>(earns 2-5 gold)<p>
+			<button type="submit">Find Gold!</button>
+		</form>
+
+		<form action="/process_money" method='post'>
+			<input type="hidden" name="building" value="casino">
+			<h2>Casino</h2>
+			<p>(earns/takes 0-50 gold)<p>
+			<button type="submit">Find Gold!</button>
+		</form>
+
+	</div>
+	<div class="activities">
+		<h6>{{session['activity']}}</h6>
+	</div>
+
+
+</body>
+</html>
